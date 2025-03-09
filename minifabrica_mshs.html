@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Fábrica MSHS</title>
+
+        <!-- Incluindo a biblioteca XLSX -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+        <!-- ****************************** -->  
+        <!-- Incluindo a biblioteca de enviar email -->
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <!-- ****************************** -->  
+
+        <!-- Conectando a pasta index.html com a pasta arquivo codigo.js, o JavaSript -->
+        <script src="comandos_mshs.js" defer></script>
+        <!-- ****************************** -->  
+
+    <!-- Conectando minha pasta HTML com a pasta "layout_pagina.css" do CSS-->
+    <link rel="stylesheet" type="text/css" href="layout_pagina.css">
+    <!-- ********************************************************************-->
+     
+</head>
+<body>
+    <img id = "botao_ac" src="MSHS.png" alt="Logo MSHS">
+    <div class="container">
+        
+        <h1 id ="letras_vermelhas">Não conformidades semanal</h1>
+    </div>
+
+    <!--Adicionando o campo para preenchimento-->
+   <label id="semana" for="campoTexto">Semana:</label><!--Texto acima da caixa de texto-->
+   <input type="text" id="numero_da_semana" placeholder="Digite aqui"><!--Caixa de texto-->
+    <!--**********************************************************************-->
+
+    
+    <h3 id ="letras_vermelhas">Células de Trabalho</h3>
+
+    <div class="colunas_10">
+        <!--Adicionando o campo para preenchimento-->
+        <label id="texto_mshs01_prep_chapas" for="campoTexto">MSHS 01 Prep. Chapas:</label><br><br><!--Texto acima da caixa de texto-->
+        <input type="text" id="anomalias_mshs01_prep_chapas" placeholder="ANOMALIAS(10)"><!--Caixa de texto-->
+       <!-- <input type="text" id="nqm_q1_mshs01_prep_chapas" placeholder="NQM Q1 (100)">-->
+        <input type="text" id="nqm_q3_mshs01_prep_chapas" placeholder="NQM Q3 (50)"><!--Caixa de texto-->
+        <input type="text" id="desvios_internos_mshs01_prep_chapas" placeholder="DESVIOS INTERNO (50)"><!--Caixa de texto-->
+        <input type="text" id="desvios_fornecedor_mshs01_prep_chapas" placeholder="DESVIO DE FORNECEDOR (50)"><!--Caixa de texto-->
+        <input type="text" id="ordens_produzidas_mshs01_prep_chapas" placeholder="ORDENS PRODUZIDAS"><!--Caixa de texto-->
+    </div>
+        <!--**********************************************************************-->
+
+        <div class="colunas_10">
+            <!--Adicionando o campo para preenchimento-->
+            <label id="texto_mshs_d5" for="campoTexto">MSHS 01 -D5:</label><br><br><!--Texto acima da caixa de texto-->
+            <input type="text" id="anomalias_mshs_d5" placeholder="ANOMALIAS(10)"><!--Caixa de texto-->
+          <!--  <input type="text" id="nqm_q1_mshs_d5" placeholder="NQM Q1 (100)">-->
+            <input type="text" id="nqm_q3_mshs_d5" placeholder="NQM Q3 (50)"><!--Caixa de texto-->
+            <input type="text" id="desvios_internos_mshs_d5" placeholder="DESVIOS INTERNO (50)"><!--Caixa de texto-->
+            <input type="text" id="desvios_fornecedor_mshs_d5" placeholder="DESVIO DE FORNECEDOR (50)"><!--Caixa de texto-->
+            <input type="text" id="ordens_produzidas_mshs_d5" placeholder="ORDENS PRODUZIDAS"><!--Caixa de texto-->
+        </div>
+            <!--**********************************************************************-->
+    
+    <div id = "voltando_inicio">
+        <button id="botao_voltar">Voltar</button>
+        <button id = "botao_enviar" >Enviar e baixar arquivo</button>
+    </div>
+
+</body>
+</html>

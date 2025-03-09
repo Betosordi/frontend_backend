@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mini Fábrica AC</title>
+<!-- Incluindo a biblioteca XLSX -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+<!-- ****************************** -->
+<!-- Incluindo a biblioteca de enviar email -->
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<!-- ****************************** -->
+<!-- Conectando a pasta index.html com a pasta arquivo codigo.js, o JavaSript -->
+<script defer="" src="comandos_ac.js"></script>
+<!-- ****************************** -->
+<!-- Conectando minha pasta HTML com a pasta "layout_pagina.css" do CSS-->
+<link href="layout_pagina.css" rel="stylesheet" type="text/css"/>
+<!-- ********************************************************************-->
+</head>
+<body>
+<img alt="Logo AC" id="botao_ac" src="AC.png"/>
+<div class="container">
+<h1 id="letras_vermelhas">Não conformidades semanal</h1>
+</div>
+<!--Adicionando o campo para preenchimento-->
+<label for="campoTexto" id="semana">Semana:</label><!--Texto acima da caixa de texto-->
+<input id="numero_da_semana" placeholder="Digite aqui" type="text"/><!--Caixa de texto-->
+<!--**********************************************************************-->
+<h3 id="letras_vermelhas">Células de Trabalho</h3>
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento-->
+<label for="campoTexto" id="texto_ac03">AC03 - MX-MOD:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac03" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--<input type="text" id="nqm_q1_ac03" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac03" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac03" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac03" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac03" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento-->
+<label id="texto_ac18">AC18 Col. Bot. de Cabina:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac18" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--<input type="text" id="nqm_q1_ac18" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac18" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac18" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac18" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac18" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<!--  <label id="texto1" for="campoTexto">AC18 - Colagem Botoeiras de Cabina:</label><br><br>Texto acima da caixa de texto-->
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento-->
+<label for="campoTexto" id="texto_ac14">AC14 Acess.FIGS:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac14" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!-- <input type="text" id="nqm_q1_ac14" placeholder="NQM Q1 (100)">Caixa de texto-->
+<input id="nqm_q3_ac14" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac14" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac14" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac14" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<div class="colunas_10">
+<label for="campoTexto" id="texto_ac09">AC09 - COP GS MOD:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac09" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!-- <input type="text" id="nqm_q1_ac09" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac09" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac09" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac09" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac09" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento-->
+<label for="campoTexto" id="texto_ac24">AC24 Co.SC1 c/ gabinete:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac24" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!-- <input type="text" id="nqm_q1_ac24" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac24" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac24" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac24" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac24" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento-->
+<label for="campoTexto" id="texto_ac08">AC08 - MICONIC BX:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac08" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!-- <input type="text" id="nqm_q1_ac08" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac08" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac08" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac08" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac08" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento-->
+<label for="campoTexto" id="texto_ac13">AC13 cop.fu.gs100(S001):</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac13" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!-- <input type="text" id="nqm_q1_ac13" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac13" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac13" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac13" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac13" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento-->
+<label for="campoTexto" id="texto_ac11">AC11 - Shaft Info CMG:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac11" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--  <input type="text" id="nqm_q1_ac11" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac11" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac11" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac11" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac11" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<div class="colunas_10">
+<label for="campoTexto" id="texto_ac17">AC17 - Acessório GS MOD :</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac17" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!-- <input type="text" id="nqm_q1_ac17" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac17" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac17" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac17" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac17" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<div class="colunas_10">
+<label for="campoTexto" id="texto_ac19">AC19 mont.módu. bionic V:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac19" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!-- <input type="text" id="nqm_q1_ac19" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac19" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac19" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac19" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac19" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<div class="colunas_10">
+<label for="campoTexto" id="texto_ac21">AC21 Inter cab. e poço cmg:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac21" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--<input type="text" id="nqm_q1_ac21" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac21" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac21" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac21" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac21" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<div class="colunas_10">
+<label for="campoTexto" id="texto_ac12">AC12 cop gs 300 (CMG):</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac12" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--<input type="text" id="nqm_q1_ac12" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac12" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac12" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac12" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac12" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<div class="colunas_10">
+<label for="campoTexto" id="texto_ac22">AC22 - Produtos Especiais:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac22" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--<input type="text" id="nqm_q1_ac22" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac22" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac22" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac22" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac22" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<div class="colunas_10">
+<label for="campoTexto" id="texto_ac25">AC25 - OKR CO SC1:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac25" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!-- <input type="text" id="nqm_q1_ac25" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac25" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac25" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac25" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac25" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<div class="colunas_10">
+<label for="campoTexto" id="texto_ac26">AC26 - BASE LDU:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac26" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--  <input type="text" id="nqm_q1_ac26" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac26" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac26" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac26" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac26" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento-->
+<label for="campoTexto" id="texto_ac10">AC10 sh.cop gs50/gs100(s001):</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac10" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--  <input type="text" id="nqm_q1_ac10" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac10" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac10" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac10" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac10" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<div class="colunas_10">
+<label for="campoTexto" id="texto_ac27">AC27 - Bem comando SC1 LDU:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac27" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!-- <input type="text" id="nqm_q1_ac27" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac27" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac27" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac27" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac27" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<div class="colunas_10">
+<label for="campoTexto" id="texto_ac01">AC01 painel comando 100L:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac01" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!-- <input type="text" id="nqm_q1_ac01" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac01" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac01" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac01" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac01" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<div class="colunas_10">
+<label for="campoTexto" id="texto_ac02">AC02 conjunto comando MX:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac02" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--  <input type="text" id="nqm_q1_ac02" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac02" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac02" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac02" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac02" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<div class="colunas_10">
+<label for="campoTexto" id="texto_ac04">AC04 - Comando CMG:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac04" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--  <input type="text" id="nqm_q1_ac04" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac04" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac04" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac04" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac04" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<div class="colunas_10">
+<label for="campoTexto" id="texto_ac05">AC05 - Comando S3600:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac05" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!-- <input type="text" id="nqm_q1_ac05" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac05" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac05" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac05" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac05" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<div class="colunas_10">
+<label for="campoTexto" id="texto_ac06">AC06 P. Comando(DRIVE MX):</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac06" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!-- <input type="text" id="nqm_q1_ac06" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac06" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac06" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac06" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac06" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<div class="colunas_10">
+<label for="campoTexto" id="texto_ac15">AC15 - KIT TOTEM:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac15" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--  <input type="text" id="nqm_q1_ac15" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac15" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac15" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac15" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac15" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<div class="colunas_10">
+<label for="campoTexto" id="texto_ac16">AC16 kit comando excel:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac16" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!-- <input type="text" id="nqm_q1_ac16" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac16" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac16" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac16" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac16" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<div class="colunas_10">
+<label for="campoTexto" id="texto_ac_phase">AC_Phase-out:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_acphase" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--   <input type="text" id="nqm_q1_acphase" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_acphase" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_acphase" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_acphase" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_acphase" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<div class="colunas_10">
+<label for="campoTexto" id="texto_diversos">DIVERSOS:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_diversos" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--  <input type="text" id="nqm_q1_diversos" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_diversos" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_diversos" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_diversos" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_diversos" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<div class="colunas_10">
+<label for="campoTexto" id="texto_ac23">AAC23 Posto trab.cube:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ac23" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--  <input type="text" id="nqm_q1_ac23" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ac23" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ac23" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ac23" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ac23" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div id="voltando_inicio">
+<button id="botao_voltar">Voltar</button>
+<button id="botao_enviar">Enviar e baixar arquivo</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mini Fabrica PB</title>
+<!-- Biblioteca JS que lÃª planilhas -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+<!-- ****************************** -->
+<!-- Incluindo a biblioteca de enviar email -->
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<!-- ****************************** -->
+<!-- Conectando a pasta index.html com a pasta arquivo codigo.js, o JavaSript -->
+<script defer="" src="comandos_pb.js"></script>
+<!-- Conectando minha pasta HTML com a pasta "layout_pagina.css" do CSS-->
+<link href="layout_pagina.css" rel="stylesheet" type="text/css"/>
+<!-- ********************************************************************-->
+</head>
+<body>
+<img alt="Logo PB" id="botao_ac" src="PB.png"/>
+<div class="container">
+<h1 id="letras_vermelhas">Não conformidades semanal</h1>
+</div>
+<!--Adicionando o campo para preenchimento-->
+<label for="campoTexto" id="semana">Semana:</label><!--Texto acima da caixa de texto-->
+<input id="numero_da_semana" placeholder="Digite aqui" type="text"/><!--Caixa de texto-->
+<!--**********************************************************************-->
+<h3 id="letras_vermelhas">Células de Trabalho</h3>
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento-->
+<label for="campoTexto" id="texto_pb01">PB01 Bat. de Pav.:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_pb01" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--<input type="text" id="nqm_q1_pb01" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_pb01" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_pb01" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_pb01" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_pb01" placeholder="ORDENS PRODUZIDAS" type="text" value="1931"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento-->
+<label id="texto_pb02">PB02 Batente de LDU:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_pb02" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!-- <input type="text" id="nqm_q1_pb02" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_pb02" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_pb02" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_pb02" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_pb02" placeholder="ORDENS PRODUZIDAS" type="text" value="154"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<!--  <label id="texto1" for="campoTexto">AC18 - Colagem Botoeiras de Cabina:</label><br><br>Texto acima da caixa de texto-->
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento-->
+<label for="campoTexto" id="texto_pb02_pc">PB02 Porta de Cabina:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_pb02_pc" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--<input type="text" id="nqm_q1_pb02_pc" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_pb02_pc" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_pb02_pc" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_pb02_pc" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_pb02_pc" placeholder="ORDENS PRODUZIDAS" type="text" value="102"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<div class="colunas_10">
+<label for="campoTexto" id="texto_pb03">PB03 Porta de pavimento:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_pb03" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!-- <input type="text" id="nqm_q1_pb03" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_pb03" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_pb03" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_pb03" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_pb03" placeholder="ORDENS PRODUZIDAS" type="text" value="2148"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento-->
+<label for="campoTexto" id="texto_pb04">PB04 Mecanismo:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_pb04" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!-- <input type="text" id="nqm_q1_pb04" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_pb04" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_pb04" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_pb04" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_pb04" placeholder="ORDENS PRODUZIDAS" type="text" value="1675"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento-->
+<label for="campoTexto" id="texto_maq_db_travessa">MÃ¡q. Dobra de travessa:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_maq_db_travessa" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--  <input type="text" id="nqm_q1_maq_db_travessa" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_maq_db_travessa" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_maq_db_travessa" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_maq_db_travessa" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_maq_db_travessa" placeholder="ORDENS PRODUZIDAS" type="text" value="8592"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento-->
+<label for="campoTexto" id="texto_maq_eb">Maq. Estampa de Bandeira:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_maq_eb" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!-- <input type="text" id="nqm_q1_maq_eb" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_maq_eb" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_maq_eb" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_maq_eb" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_maq_eb" placeholder="ORDENS PRODUZIDAS" type="text" value="1931"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento-->
+<label for="campoTexto" id="texto_maq_bs">Maq. Base de soleira:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_maq_bs" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!-- <input type="text" id="nqm_q1_maq_bs" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_maq_bs" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_maq_bs" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_maq_bs" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_maq_bs" placeholder="ORDENS PRODUZIDAS" type="text" value="1931"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento-->
+<label for="campoTexto" id="texto_maq_estampa_bat">Maq. Estampa de Batente:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_maq_estampa_bat" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!-- <input type="text" id="nqm_q1_maq_estampa_bat" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_maq_estampa_bat" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_maq_estampa_bat" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_maq_estampa_bat" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_maq_estampa_bat" placeholder="ORDENS PRODUZIDAS" type="text" value="3862"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento-->
+<label for="campoTexto" id="texto_maq_estampa_trav">Maq. Estampa de travessa:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_maq_estampa_trav" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--  <input type="text" id="nqm_q1_maq_estampa_trav" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_maq_estampa_trav" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_maq_estampa_trav" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_maq_estampa_trav" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_maq_estampa_trav" placeholder="ORDENS PRODUZIDAS" type="text" value="8592"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<div class="colunas_10">
+<label for="campoTexto" id="texto_maq_estampa_port">Maq. Estampa de porta:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_maq_estampa_port" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--  <input type="text" id="nqm_q1_maq_estampa_port" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_maq_estampa_port" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_maq_estampa_port" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_maq_estampa_port" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_maq_estampa_port" placeholder="ORDENS PRODUZIDAS" type="text" value="4296"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento-->
+<div class="colunas_10">
+<label for="campoTexto" id="texto_maq_estampa_toeguard">Máq. Estampa de toe guard:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_maq_estampa_toeguard" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--  <input type="text" id="nqm_q1_maq_estampa_toeguard" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_maq_estampa_toeguard" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_maq_estampa_toeguard" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_maq_estampa_toeguard" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_maq_estampa_toeguard" placeholder="ORDENS PRODUZIDAS" type="text" value="2148"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div id="voltando_inicio">
+<button id="botao_voltar">Voltar</button>
+<button id="botao_enviar">Enviar e baixar arquivo</button>
+</div>
+</body>
+</html>

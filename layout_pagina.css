@@ -1,0 +1,161 @@
+/*
+Deixando a cor de fundo da tela preto
+*/
+body {
+    background-color: white;
+}
+/*----------------------------------*/
+
+
+/*----------------------------------*/
+#botao_ac_inicio img, #botao_me_inicio img, #botao_ca_inicio img, #botao_pb_inicio img, #botao_er_inicio img,#botao_mshs_inicio img {
+    color: red;
+    width: 150px;
+    height: 100px;
+    margin: 20px; /* Ajuste o espaçamento entre os botões */
+    font-weight: bold;
+    background-color: #ffcccc;
+    border-radius: 10px;
+    text-align: center; /* Centraliza o texto dentro do botão */
+    display: inline-block; /* Faz com que os botões fiquem lado a lado */
+    vertical-align: middle; /* Garante que fiquem alinhados verticalmente */
+}
+
+
+/*Parte do cabeçalho ----------------------------------*/
+
+
+
+
+#foto_atlas {
+    width: 300px; /* Ajuste a largura da imagem conforme necessário */
+     /* Mantém a proporção da imagem */
+    
+    float: left;
+}
+
+/* Pagina da AC ----------------------------------------------*/
+#texto_ac18, #texto_ac14, #texto_ac03, #texto_ac09, #texto_ac24, #texto_ac08, #texto_ac13,
+    #texto_ac11, #texto_ac17, #texto_ac19, #texto_ac21, #texto_ac12, #texto_ac22, #texto_ac25,
+        #texto_ac26, #texto_ac10, #texto_ac27, #texto_ac01, #texto_ac02, #texto_ac04, #texto_ac05, 
+             #texto_ac06, #texto_ac15, #texto_ac16, #texto_ac_phase, #texto_diversos, #texto_ac23, #semana {
+                 font-weight: bold;
+
+
+}
+
+#celulas_trabalho {
+    width: 100%; /* Define a largura da div como 50% do contêiner pai */
+    height: auto; /* A altura será ajustada automaticamente com base no conteúdo */
+   /* border: 1px solid black;*/ /* Adiciona uma borda para visualização */
+}
+input[type="text"] {
+    font-size: 10px; /* Tamanho da fonte */
+    width: 145px; /* Largura da caixa de texto */
+    height: 10px; /* Altura da caixa de texto */
+    padding: 5px; /* Espaçamento interno */
+}
+
+.colunas_9 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espaçamento entre os elementos */
+    margin-bottom: 20px; /* Espaçamento entre as linhas */
+    border: 1px solid black; /* Adiciona uma borda para visualização */
+    justify-content: center; /* Alinha os itens horizontalmente ao centro */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    text-align: center; 
+}
+
+.colunas_10 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Espaçamento entre os elementos */
+    margin-bottom: 10px; /* Espaçamento entre as linhas */
+    border: 2px solid red; /* Adiciona uma borda para visualização */
+    
+    
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    text-align: center; 
+}
+
+#voltando_inicio {
+    display: flex; /* Define o layout flexível */
+    justify-content: space-between; /* Distribui os itens com espaço entre eles */
+    width: 100%; /* Define a largura da div como 100% do contêiner pai */
+    height: auto; /* A altura será ajustada automaticamente com base no conteúdo */
+    margin-bottom: 100px; /* Espaçamento entre as linhas */
+    /* border: 1px solid black;*/ /* Adiciona uma borda para visualização */
+}
+
+#botao_voltar, #botao_enviar {
+    width: 170px; /* Define a largura dos botões */
+    height: 30px; /* Define a altura dos botões */
+    border: 2px solid black; /* Adiciona uma borda para visualização */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+    background-color: #f0f0f0; /* Adiciona uma cor de fundo cinza claro, quase branco */
+    display: flex; /* Define o layout flexível para o botão */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    text-align: center; /* Centraliza o texto */
+}
+/* Pasta ME*/
+#texto_me13,#texto_me19, #texto_me18, #texto_me09, #texto_me16,
+    #texto_me08, #texto_me11, #texto_me17{
+            font-weight: bold
+        }
+/* Pasta CA*/
+#texto_ca01,#texto_ca03,#texto_ca08,#texto_ca09,#texto_ca11,#texto_ca12,#texto_ca13,
+    #texto_ca15, #texto_ca16, #texto_ca21,#texto_ca22{
+    font-weight: bold
+}
+/* Pasta PB*/
+#texto_pb01,#texto_pb02,#texto_pb02_pc,#texto_pb03,#texto_pb04,#texto_maq_db_travessa,
+    #texto_maq_eb,#texto_maq_bs,#texto_maq_estampa_bat,#texto_maq_estampa_trav,#texto_maq_estampa_port,#texto_maq_estampa_toeguard{
+
+    font-weight: bold
+}
+/* Pasta ER MSHS*/
+
+#texto_er01,#texto_mshs01_prep_chapas,#texto_mshs_d5{
+    font-weight: bold
+}
+
+/* Botão jason*/
+#requisitar_jason{
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+}
+
+
+
+
+.container {
+    display: flex; /* Usar flexbox */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    height: 10vh; /* Faz o contêiner ocupar 100% da altura da tela */
+}
+
+#letras_vermelhas {
+    font-weight: bold;  
+    text-align: center; /* Centraliza o texto dentro do h1 */
+    color: red; /* Exemplo de cor vermelha */
+}
+
+#tag_inicio {
+    display: flex;        /* Usa flexbox para alinhar os itens dentro do div */
+    justify-content: center;  /* Opcional: centraliza os itens horizontalmente */
+    align-items: center;      /* Alinha os itens verticalmente no centro */
+    /*gap: 50px;  Espaço entre os itens */
+}
+
+
+.container_2 {
+     
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; /* Centraliza verticalmente */
+        flex-wrap: wrap; /* Permite que os botões quebrem linha se necessário */
+        height: 30vh; /* Faz com que o contêiner ocupe a altura total da tela */
+    
+}

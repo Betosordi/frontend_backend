@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mini Fábrica CA</title>
+<!-- Incluindo a biblioteca XLSX -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+<!-- ****************************** -->
+<!-- Incluindo a biblioteca de enviar email -->
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<!-- ****************************** -->
+<!-- Conectando a pasta index.html com a pasta arquivo codigo.js, o JavaSript -->
+<script defer="" src="comandos_ca.js"></script>
+<!-- ****************************** -->
+<!-- Conectando minha pasta HTML com a pasta "layout_pagina.css" do CSS-->
+<link href="layout_pagina.css" rel="stylesheet" type="text/css"/>
+<!-- ********************************************************************-->
+</head>
+<body>
+<img alt="Logo CA" id="botao_ac" src="CA.png"/>
+<div class="container">
+<h1 id="letras_vermelhas">Não conformidades semanal</h1>
+</div>
+<!--Adicionando o campo para preenchimento-->
+<label for="campoTexto" id="semana">Semana:</label><!--Texto acima da caixa de texto-->
+<input id="numero_da_semana" placeholder="Digite aqui" type="text"/><!--Caixa de texto-->
+<!--**********************************************************************-->
+<h3 id="letras_vermelhas">Células de Trabalho</h3>
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento linha 1-->
+<label for="campoTexto" id="texto_ca01">CA01 Prep.pla.floor(S001/3600):</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ca01" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!-- <input type="text" id="nqm_q1_ca01" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ca01" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ca01" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ca01" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ca01" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento linha 2-->
+<label id="texto_ca03">CA03/07 Prep.Totem/Arm.comando mod/flex:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ca03" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!-- <input type="text" id="nqm_q1_ca03" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ca03" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ca03" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ca03" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ca03" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento linha 3-->
+<!--  <label id="texto1" for="campoTexto">AC18 - Colagem Botoeiras de Cabina:</label><br><br>Texto acima da caixa de texto-->
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento-->
+<label for="campoTexto" id="texto_ca08">CA08 rodapé/corrimão:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ca08" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!-- <input type="text" id="nqm_q1_ca08" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ca08" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ca08" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ca08" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ca08" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<!--Adicionando o campo para preenchimento linha 4-->
+<div class="colunas_10">
+<label for="campoTexto" id="texto_ca09">CA09 Pain.pk33 cmg, 310-sh:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ca09" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--  <input type="text" id="nqm_q1_ca09" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ca09" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ca09" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ca09" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ca09" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento linha 5-->
+<label for="campoTexto" id="texto_ca11">CA11 Mont. deco celing pk44(teto falso):</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ca11" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--  <input type="text" id="nqm_q1_ca11" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ca11" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ca11" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ca11" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ca11" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento linha 6-->
+<label for="campoTexto" id="texto_ca12">CA12 Pain.de cabina/frente de cabina pk44:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ca12" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--  <input type="text" id="nqm_q1_ca12" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ca12" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ca12" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ca12" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ca12" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento linha 7-->
+<label for="campoTexto" id="texto_ca13">CA13 Mont. de Roof/Deco NEOLIFT CMG e MOD:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ca13" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--   <input type="text" id="nqm_q1_ca13" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ca13" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ca13" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ca13" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ca13" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento linha 8-->
+<label for="campoTexto" id="texto_ca15">CA15 Mont.kit chapa proteção de contrapeso:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ca15" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--  <input type="text" id="nqm_q1_ca15" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ca15" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ca15" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ca15" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ca15" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento linha 9-->
+<label for="campoTexto" id="texto_ca16">CA16 Reg. GED10/20 e montagem polias:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ca16" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--   <input type="text" id="nqm_q1_ca16" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ca16" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ca16" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ca16" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ca16" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento linha 10-->
+<label for="campoTexto" id="texto_ca21">CA21 Mont. CTM/ Balaustrada PK44:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ca21" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--   <input type="text" id="nqm_q1_ca21" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ca21" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ca21" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ca21" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ca21" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div class="colunas_10">
+<!--Adicionando o campo para preenchimento linha 11-->
+<label for="campoTexto" id="texto_ca22">CA22 Mont. Plataforma/ROOF PK44:</label><br/><br/><!--Texto acima da caixa de texto-->
+<input id="anomalias_ca22" placeholder="ANOMALIAS(10)" type="text"/><!--Caixa de texto-->
+<!--  <input type="text" id="nqm_q1_ca22" placeholder="NQM Q1 (100)">-->
+<input id="nqm_q3_ca22" placeholder="NQM Q3 (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_internos_ca22" placeholder="DESVIOS INTERNO (50)" type="text"/><!--Caixa de texto-->
+<input id="desvios_fornecedor_ca22" placeholder="DESVIO DE FORNECEDOR (50)" type="text"/><!--Caixa de texto-->
+<input id="ordens_produzidas_ca22" placeholder="ORDENS PRODUZIDAS" type="text" value="0"/><!--Caixa de texto-->
+</div>
+<!--**********************************************************************-->
+<div id="voltando_inicio">
+<button id="botao_voltar">Voltar</button>
+<button id="botao_enviar">Enviar e baixar arquivo</button>
+</div>
+</body>
+</html>
